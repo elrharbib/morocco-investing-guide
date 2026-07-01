@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investing in Morocco — The Complete Guide · @basmaunpacks</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream: #F5EDE0;
+  --sand: #E8D9C5;
+  --terracotta: #B07D52;
+  --espresso: #2C1F14;
+  --bark: #6B4F35;
+  --white: #ffffff;
+  --border: rgba(44,31,20,0.10);
+  --border-med: rgba(44,31,20,0.18);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  background: var(--cream);
+  color: var(--espresso);
+  line-height: 1.7;
+}
+
+/* ── LANG TOGGLE ── */
+.lang-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--espresso);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 48px;
+}
+.lang-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  color: rgba(245,237,224,0.6);
+  letter-spacing: 0.05em;
+}
+.lang-btns { display: flex; gap: 6px; }
+.lang-btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(245,237,224,0.25);
+  background: transparent;
+  color: rgba(245,237,224,0.5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.lang-btn.active {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  color: var(--white);
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--espresso);
+  padding: 100px 24px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(176,125,82,0.18) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(176,125,82,0.10) 0%, transparent 50%);
+}
+.hero-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 20px;
+  position: relative;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 6vw, 3.6rem);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.15;
+  margin-bottom: 20px;
+  position: relative;
+}
+.hero-title em { font-style: italic; color: var(--terracotta); }
+.hero-sub {
+  font-size: 15px;
+  color: rgba(245,237,224,0.6);
+  max-width: 520px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+  position: relative;
+}
+
+/* ── STAT STRIP ── */
+.stat-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(245,237,224,0.08);
+  border-top: 1px solid rgba(245,237,224,0.08);
+  position: relative;
+}
+.stat-cell {
+  padding: 28px 20px;
+  text-align: center;
+  background: rgba(44,31,20,0.4);
+}
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-num span { color: var(--terracotta); }
+.stat-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245,237,224,0.4);
+  line-height: 1.5;
+}
+
+/* ── PAGE WRAP ── */
+.page { max-width: 780px; margin: 0 auto; padding: 0 24px 80px; }
+
+/* ── SECTION LABELS ── */
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 56px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 0.5px;
+  background: var(--border-med);
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+
+/* ── FACT BOX ── */
+.fact-box {
+  background: var(--espresso);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin: 20px 0;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.fact-icon { font-size: 20px; flex-shrink: 0; padding-top: 2px; }
+.fact-content {}
+.fact-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 4px;
+}
+.fact-text { font-size: 13.5px; color: var(--cream); line-height: 1.7; }
+.fact-text strong { color: #FFE0C0; font-weight: 500; }
+
+/* ── ROUTE CARDS ── */
+.route-header {
+  border-radius: 14px 14px 0 0;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 28px;
+}
+.route-header.legal { background: var(--espresso); }
+.route-header.grey { background: var(--bark); }
+.route-header.risk { background: #4a3020; }
+
+.route-badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  flex-shrink: 0;
+}
+.route-badge.legal { background: rgba(245,237,224,0.12); color: rgba(245,237,224,0.7); border: 1px solid rgba(245,237,224,0.2); }
+.route-badge.grey { background: rgba(245,237,224,0.1); color: rgba(245,237,224,0.6); border: 1px solid rgba(245,237,224,0.15); }
+.route-badge.risk { background: rgba(200,80,50,0.2); color: #ffb599; border: 1px solid rgba(200,80,50,0.3); }
+
+.route-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--cream);
+  line-height: 1.25;
+}
+.route-body {
+  border: 0.5px solid var(--border-med);
+  border-top: none;
+  border-radius: 0 0 14px 14px;
+  overflow: hidden;
+}
+
+/* ── OPTION CARDS ── */
+.option-card {
+  padding: 22px 24px;
+  border-bottom: 0.5px solid var(--border);
+  background: var(--white);
+}
+.option-card:last-child { border-bottom: none; }
+.option-card.sand { background: var(--sand); }
+
+.option-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  gap: 12px;
+}
+.option-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--espresso);
+  line-height: 1.25;
+}
+.option-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: var(--cream);
+  color: var(--bark);
+  border: 0.5px solid var(--border-med);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.option-desc { font-size: 13.5px; color: var(--bark); line-height: 1.7; margin-bottom: 14px; }
+
+/* ── MINI STATS ── */
+.mini-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 8px;
+}
+.mini-stat {
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 10px 12px;
+  border: 0.5px solid var(--border);
+}
+.mini-stat-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--espresso);
+  line-height: 1;
+  margin-bottom: 3px;
+}
+.mini-stat-val.highlight { color: var(--terracotta); }
+.mini-stat-lbl {
+  font-family: 'DM Mono', monospace;
+  font-size: 8.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bark);
+  opacity: 0.7;
+}
+
+/* ── TABLE ── */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 16px 0;
+}
+.data-table th {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bark);
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-med);
+  background: var(--sand);
+}
+.data-table td {
+  padding: 11px 12px;
+  border-bottom: 0.5px solid var(--border);
+  color: var(--espresso);
+  line-height: 1.5;
+  vertical-align: top;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:nth-child(even) td { background: rgba(245,237,224,0.4); }
+.data-table .good { color: #3B6D11; font-weight: 500; }
+.data-table .warn { color: #B07D52; font-weight: 500; }
+.data-table .bad { color: #A32D2D; font-weight: 500; }
+
+/* ── CHART AREA ── */
+.chart-wrap {
+  background: var(--white);
+  border: 0.5px solid var(--border-med);
+  border-radius: 14px;
+  padding: 24px;
+  margin: 20px 0;
+}
+.chart-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 4px;
+}
+.chart-sub {
+  font-size: 12px;
+  color: var(--bark);
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+.bar-chart { display: flex; flex-direction: column; gap: 10px; }
+.bar-row { display: flex; align-items: center; gap: 10px; }
+.bar-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--bark);
+  min-width: 120px;
+  text-align: right;
+}
+.bar-track {
+  flex: 1;
+  height: 28px;
+  background: var(--sand);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--cream);
+  transition: width 1s cubic-bezier(0.4,0,0.2,1);
+  min-width: 44px;
+}
+.bar-fill.primary { background: var(--espresso); }
+.bar-fill.accent { background: var(--terracotta); }
+.bar-fill.light { background: var(--bark); }
+.bar-fill.green { background: #3B6D11; }
+.bar-fill.muted { background: #aaa; color: var(--espresso); }
+
+/* ── MASI HISTORY CHART ── */
+.line-chart-container { position: relative; height: 180px; margin-top: 8px; }
+.line-chart-container canvas { width: 100% !important; }
+.chart-legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--bark); }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* ── GREY AREA ── */
+.grey-card {
+  background: var(--white);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin-bottom: 10px;
+}
+.grey-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+.grey-name { font-weight: 500; font-size: 14px; color: var(--espresso); }
+.grey-status {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.grey-status.caution { background: rgba(176,125,82,0.12); color: var(--terracotta); border: 1px solid rgba(176,125,82,0.3); }
+.grey-status.risk { background: rgba(163,45,45,0.08); color: #A32D2D; border: 1px solid rgba(163,45,45,0.2); }
+.grey-desc { font-size: 13px; color: var(--bark); line-height: 1.7; }
+
+/* ── PULL QUOTE ── */
+.pull-quote {
+  border-left: 3px solid var(--terracotta);
+  padding: 12px 20px;
+  margin: 20px 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--bark);
+  line-height: 1.65;
+  background: rgba(176,125,82,0.05);
+  border-radius: 0 8px 8px 0;
+}
+
+/* ── MRE RULES ── */
+.rule-block {
+  background: var(--white);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.rule-header {
+  padding: 14px 20px;
+  background: var(--sand);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rule-icon { font-size: 16px; }
+.rule-title { font-weight: 500; font-size: 13.5px; color: var(--espresso); }
+.rule-body { padding: 14px 20px; font-size: 13px; color: var(--bark); line-height: 1.7; }
+.rule-body strong { color: var(--espresso); font-weight: 500; }
+
+/* ── CTA ── */
+.cta-block {
+  background: var(--espresso);
+  border-radius: 16px;
+  padding: 40px 32px;
+  text-align: center;
+  margin-top: 56px;
+}
+.cta-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 16px;
+}
+.cta-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+.cta-sub { font-size: 14px; color: rgba(245,237,224,0.6); line-height: 1.75; max-width: 440px; margin: 0 auto 28px; }
+.cta-btn {
+  display: inline-block;
+  background: var(--terracotta);
+  color: var(--white);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.cta-btn:hover { opacity: 0.85; }
+.cta-note { font-size: 11px; color: rgba(245,237,224,0.3); margin-top: 16px; line-height: 1.6; }
+
+/* ── DISCLAIMER ── */
+.disclaimer {
+  margin-top: 40px;
+  padding: 20px 24px;
+  background: var(--sand);
+  border-radius: 10px;
+  font-size: 11.5px;
+  color: var(--bark);
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .stat-strip { grid-template-columns: 1fr; gap: 1px; }
+  .bar-label { min-width: 80px; font-size: 9px; }
+  .mini-stats { grid-template-columns: 1fr 1fr; }
+  .lang-bar { padding: 0 16px; }
+}
+
+/* ── LANGUAGE SWITCHING ── */
+.fr { display: none; }
+body.lang-fr .en { display: none; }
+body.lang-fr .fr { display: block; }
+body.lang-fr .en-inline { display: none !important; }
+body.lang-fr .fr-inline { display: inline !important; }
+.fr-inline { display: none; }
+</style>
+</head>
+<body>
+
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <div class="lang-brand">@basmaunpacks</div>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('fr')">FR</button>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow en">The Complete Guide · Morocco</div>
+  <div class="hero-eyebrow fr">Le Guide Complet · Maroc</div>
+  <h1 class="hero-title en">Investing in Morocco.<br><em>Every option.</em> Honestly.</h1>
+  <h1 class="hero-title fr">Investir au Maroc.<br><em>Toutes les options.</em> Honnêtement.</h1>
+  <p class="hero-sub en">Three routes. Not all equal. Not all legal. Here is what actually exists — and what each one costs you.</p>
+  <p class="hero-sub fr">Trois voies. Pas toutes équivalentes. Pas toutes légales. Voici ce qui existe réellement — et ce que chacune vous coûte.</p>
+
+  <div class="stat-strip">
+    <div class="stat-cell">
+      <div class="stat-num">27.<span>57%</span></div>
+      <div class="stat-label en">MASI return 2025</div>
+      <div class="stat-label fr">Rendement MASI 2025</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">2.<span>2%</span></div>
+      <div class="stat-label en">Savings account rate</div>
+      <div class="stat-label fr">Taux compte épargne</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">609</div>
+      <div class="stat-label en">Active investment funds</div>
+      <div class="stat-label fr">Fonds d'investissement actifs</div>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+
+<!-- ═══════════════════════════════ ROUTE 1 ═══════════════════════════════ -->
+<div class="section-label en">Route 1 — Fully legal</div>
+<div class="section-label fr">Voie 1 — Entièrement légale</div>
+<h2 class="section-title en">What already exists inside Morocco</h2>
+<h2 class="section-title fr">Ce qui existe déjà au Maroc</h2>
+
+<div class="fact-box">
+  <div class="fact-icon">💡</div>
+  <div class="fact-content">
+    <div class="fact-label en">Did you know</div>
+    <div class="fact-label fr">Le saviez-vous</div>
+    <div class="fact-text en">Morocco's savings rate is <strong>29.7% of GDP</strong> — one of the highest in Africa. Yet most of that money sits in bank deposits earning 2.2%. The gap between what Moroccans save and what they invest is one of the largest in the region.</div>
+    <div class="fact-text fr">Le taux d'épargne marocain est de <strong>29,7% du PIB</strong> — l'un des plus élevés d'Afrique. Pourtant, la majeure partie de cet argent dort dans des comptes épargne à 2,2%. L'écart entre ce que les Marocains épargnent et ce qu'ils investissent est l'un des plus importants de la région.</div>
+  </div>
+</div>
+
+<div class="route-header legal">
+  <span class="route-badge legal en">Fully Legal</span>
+  <span class="route-badge legal fr">Entièrement légal</span>
+  <div class="route-title en">Route 1 — Three options, all accessible today</div>
+  <div class="route-title fr">Voie 1 — Trois options, toutes accessibles aujourd'hui</div>
+</div>
+<div class="route-body">
+
+  <!-- OPCVM -->
+  <div class="option-card">
+    <div class="option-top">
+      <div class="option-name en">Investment Funds (OPCVM)</div>
+      <div class="option-name fr">Fonds d'investissement (OPCVM)</div>
+      <span class="option-tag en">Lowest barrier</span>
+      <span class="option-tag fr">Accès le plus facile</span>
+    </div>
+    <p class="option-desc en">Morocco has 609 active investment funds covering money market, bonds, equities, and diversified strategies. The comparison platform tamra.ma lists them all with historical performance. Some funds are accessible from 500 MAD.</p>
+    <p class="option-desc fr">Le Maroc compte 609 fonds d'investissement actifs couvrant le monétaire, les obligations, les actions et les stratégies diversifiées. La plateforme tamra.ma les liste tous avec les performances historiques. Certains fonds sont accessibles à partir de 500 MAD.</p>
+    <div class="mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">500 MAD</div><div class="mini-stat-lbl en">Min. entry (some funds)</div><div class="mini-stat-lbl fr">Entrée min. (certains fonds)</div></div>
+      <div class="mini-stat"><div class="mini-stat-val highlight">22.6%</div><div class="mini-stat-lbl en">Equity fund return 2024</div><div class="mini-stat-lbl fr">Fonds actions 2024</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">3.2%</div><div class="mini-stat-lbl en">Money market 2024</div><div class="mini-stat-lbl fr">Monétaire 2024</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">T+1</div><div class="mini-stat-lbl en">Redemption speed</div><div class="mini-stat-lbl fr">Délai de rachat</div></div>
+    </div>
+
+    <div class="chart-wrap" style="margin-top:18px;">
+      <div class="chart-title en">OPCVM returns by category — 2024</div>
+      <div class="chart-title fr">Rendements OPCVM par catégorie — 2024</div>
+      <div class="chart-sub en">Equity funds led the field by a wide margin</div>
+      <div class="chart-sub fr">Les fonds actions ont largement dominé</div>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <div class="bar-label en">Equity</div><div class="bar-label fr" style="display:none">Actions</div>
+          <div class="bar-track"><div class="bar-fill primary" style="width:76%">22.6%</div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label en">Diversified</div><div class="bar-label fr" style="display:none">Diversifié</div>
+          <div class="bar-track"><div class="bar-fill light" style="width:48%">~13%</div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label en">Money Market</div><div class="bar-label fr" style="display:none">Monétaire</div>
+          <div class="bar-track"><div class="bar-fill accent" style="width:11%">3.2%</div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label en">Bonds (MT/LT)</div><div class="bar-label fr" style="display:none">Obligataire MT/LT</div>
+          <div class="bar-track"><div class="bar-fill light" style="width:20%">~5%</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="fact-box" style="margin-top:14px;">
+      <div class="fact-icon">⚠️</div>
+      <div class="fact-content">
+        <div class="fact-label en">Watch out</div>
+        <div class="fact-label fr">Attention</div>
+        <div class="fact-text en">Capital gains tax on OPCVM units held less than 12 months: <strong>30%</strong>. Hold more than 12 months: <strong>15%</strong>. Withheld at source when you redeem. MREs: same rates apply — no specific exemption for funds (unlike equities).</div>
+        <div class="fact-text fr">Impôt sur les plus-values OPCVM détenues moins de 12 mois : <strong>30%</strong>. Au-delà : <strong>15%</strong>. Retenu à la source au rachat. MRE : mêmes taux — pas d'exonération spécifique pour les fonds (contrairement aux actions).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CSE -->
+  <div class="option-card sand">
+    <div class="option-top">
+      <div class="option-name en">Casablanca Stock Exchange (MASI)</div>
+      <div class="option-name fr">Bourse de Casablanca (MASI)</div>
+      <span class="option-tag en">Higher return potential</span>
+      <span class="option-tag fr">Potentiel de rendement élevé</span>
+    </div>
+    <p class="option-desc en">79 listed companies. 17 licensed brokers. The MASI returned 27.57% in 2025 — its strongest year in nine years, described as "the light at the end of the tunnel after fifteen years of stagnation." Banking and telecoms dominate the index. Direct purchase from 5,000–20,000 MAD in practice.</p>
+    <p class="option-desc fr">79 sociétés cotées. 17 courtiers agréés. Le MASI a progressé de 27,57% en 2025 — sa meilleure année depuis neuf ans, qualifié de « lumière au bout du tunnel après quinze ans de stagnation ». Les secteurs bancaire et télécom dominent l'indice. Achat direct à partir de 5 000–20 000 MAD en pratique.</p>
+    <div class="mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val highlight">+27.57%</div><div class="mini-stat-lbl en">MASI return 2025</div><div class="mini-stat-lbl fr">MASI 2025</div></div>
+      <div class="mini-stat"><div class="mini-stat-val highlight">+22.2%</div><div class="mini-stat-lbl en">MASI return 2024</div><div class="mini-stat-lbl fr">MASI 2024</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">MAD 1T</div><div class="mini-stat-lbl en">Market cap (2025)</div><div class="mini-stat-lbl fr">Capitalisation (2025)</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">0.26–0.6%</div><div class="mini-stat-lbl en">Commission per trade</div><div class="mini-stat-lbl fr">Commission par ordre</div></div>
+    </div>
+
+    <div class="chart-wrap" style="margin-top:18px;">
+      <div class="chart-title">MASI — <span class="en">Annual returns 2018–2025</span><span class="fr">Rendements annuels 2018–2025</span></div>
+      <div class="chart-sub en">Two exceptional years after a long flat period</div>
+      <div class="chart-sub fr">Deux années exceptionnelles après une longue période de stagnation</div>
+      <div class="bar-chart">
+        <div class="bar-row"><div class="bar-label">2018</div><div class="bar-track"><div class="bar-fill bad" style="width:15%;background:#A32D2D">−8.0%</div></div></div>
+        <div class="bar-row"><div class="bar-label">2019</div><div class="bar-track"><div class="bar-fill green" style="width:22%">+7.1%</div></div></div>
+        <div class="bar-row"><div class="bar-label">2020</div><div class="bar-track"><div class="bar-fill bad" style="width:14%;background:#A32D2D">−7.3%</div></div></div>
+        <div class="bar-row"><div class="bar-label">2021</div><div class="bar-track"><div class="bar-fill green" style="width:67%">+18.5%</div></div></div>
+        <div class="bar-row"><div class="bar-label">2022</div><div class="bar-track"><div class="bar-fill bad" style="width:5%;background:#A32D2D">−1.9%</div></div></div>
+        <div class="bar-row"><div class="bar-label">2023</div><div class="bar-track"><div class="bar-fill green" style="width:12%">+3.4%</div></div></div>
+        <div class="bar-row"><div class="bar-label">2024</div><div class="bar-track"><div class="bar-fill primary" style="width:81%">+22.2%</div></div></div>
+        <div class="bar-row"><div class="bar-label">2025</div><div class="bar-track"><div class="bar-fill accent" style="width:100%">+27.57%</div></div></div>
+      </div>
+      <p style="font-size:11px;color:var(--bark);margin-top:12px;font-style:italic;" class="en">Past performance does not predict future returns. The 2020 figure reflects COVID-19 impact.</p>
+      <p style="font-size:11px;color:var(--bark);margin-top:12px;font-style:italic;" class="fr">Les performances passées ne préjugent pas des résultats futurs. Le chiffre 2020 reflète l'impact du COVID-19.</p>
+    </div>
+
+    <div class="fact-box" style="margin-top:14px;background:var(--espresso)">
+      <div class="fact-icon">✨</div>
+      <div class="fact-content">
+        <div class="fact-label en">MRE advantage</div>
+        <div class="fact-label fr">Avantage MRE</div>
+        <div class="fact-text en">Non-residents pay <strong>0% capital gains tax</strong> on CSE-listed equities. Moroccan residents pay 15%. This is a permanent exemption — Article 68-IV of the Moroccan Tax Code. Dividends: 15% withholding at source for all investors.</div>
+        <div class="fact-text fr">Les non-résidents paient <strong>0% d'impôt sur les plus-values</strong> sur les actions cotées à la Bourse de Casablanca. Les résidents marocains paient 15%. Il s'agit d'une exonération permanente — Article 68-IV du Code Général des Impôts. Dividendes : retenue à la source de 15% pour tous.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;">
+      <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--bark);margin-bottom:10px;" class="en">How to open a brokerage account</div>
+      <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--bark);margin-bottom:10px;" class="fr">Comment ouvrir un compte-titres</div>
+      <table class="data-table">
+        <thead><tr><th class="en">Step</th><th class="fr">Étape</th><th class="en">What you need</th><th class="fr">Ce qu'il faut</th><th class="en">Time</th><th class="fr">Délai</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td style="display:none">1</td><td class="en">Choose a licensed broker</td><td class="fr">Choisir un courtier agréé</td><td class="en">CDG Capital Bourse has best online flow</td><td class="fr">CDG Capital Bourse : meilleur accès en ligne</td></tr>
+          <tr><td>2</td><td style="display:none">2</td><td class="en">Documents</td><td class="fr">Documents</td><td class="en">CIN or passport + proof of address + Moroccan bank RIB</td><td class="fr">CIN ou passeport + justificatif de domicile + RIB marocain</td></tr>
+          <tr><td>3</td><td style="display:none">3</td><td class="en">Initial deposit</td><td class="fr">Dépôt initial</td><td class="en">MAD 1,000–10,000 depending on broker</td><td class="fr">1 000–10 000 MAD selon le courtier</td></tr>
+          <tr><td>4</td><td style="display:none">4</td><td class="en">Processing</td><td class="fr">Traitement</td><td class="en">7–15 business days</td><td class="fr">7–15 jours ouvrés</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px;color:var(--bark);margin-top:8px;" class="en">⚠️ MREs: first-time account opening usually requires a branch visit in Morocco, or processing via Attijariwafa's European subsidiaries.</p>
+      <p style="font-size:12px;color:var(--bark);margin-top:8px;" class="fr">⚠️ MRE : la première ouverture de compte nécessite généralement une visite en agence au Maroc, ou un traitement via les filiales européennes d'Attijariwafa.</p>
+    </div>
+  </div>
+
+  <!-- PER -->
+  <div class="option-card">
+    <div class="option-top">
+      <div class="option-name en">Retirement Savings Plan (PER)</div>
+      <div class="option-name fr">Plan d'Épargne Retraite (PER)</div>
+      <span class="option-tag en">Tax advantage</span>
+      <span class="option-tag fr">Avantage fiscal</span>
+    </div>
+    <p class="option-desc en">Morocco's only tax-advantaged individual savings vehicle. Contributions are deductible from income tax up to MAD 50,000/year. For someone in the 38% tax bracket contributing MAD 50,000, the immediate tax saving is MAD 19,000 per year.</p>
+    <p class="option-desc fr">Le seul produit d'épargne individuel fiscalement avantageux au Maroc. Les versements sont déductibles de l'IR jusqu'à 50 000 MAD/an. Pour quelqu'un dans la tranche à 38% versant 50 000 MAD, l'économie fiscale immédiate est de 19 000 MAD par an.</p>
+    <div class="mini-stats">
+      <div class="mini-stat"><div class="mini-stat-val">500 MAD</div><div class="mini-stat-lbl en">Monthly min.</div><div class="mini-stat-lbl fr">Min. mensuel</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">50,000 MAD</div><div class="mini-stat-lbl en">Annual deduction cap</div><div class="mini-stat-lbl fr">Plafond déduction annuelle</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">Age 50</div><div class="mini-stat-lbl en">Earliest withdrawal</div><div class="mini-stat-lbl fr">Retrait minimum</div></div>
+      <div class="mini-stat"><div class="mini-stat-val">1–1.5%</div><div class="mini-stat-lbl en">Annual management fee</div><div class="mini-stat-lbl fr">Frais de gestion annuels</div></div>
+    </div>
+    <div class="fact-box" style="margin-top:14px;">
+      <div class="fact-icon">⚠️</div>
+      <div class="fact-content">
+        <div class="fact-label en">Important</div>
+        <div class="fact-label fr">Important</div>
+        <div class="fact-text en">The tax deduction requires <strong>Moroccan tax residency</strong>. MREs who are not Moroccan tax residents cannot benefit from the IR deduction. Illiquid until age 50 — early redemption triggers unfavourable tax on the full amount.</div>
+        <div class="fact-text fr">La déduction fiscale nécessite la <strong>résidence fiscale marocaine</strong>. Les MRE non-résidents fiscaux ne peuvent pas bénéficier de la déduction IR. Illiquide jusqu'à 50 ans — un rachat anticipé déclenche une fiscalité défavorable sur l'intégralité des sommes.</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end route-body -->
+
+<!-- ═══════════════════════════════ LAW 03-25 ═══════════════════════════════ -->
+<div class="section-label en">The new rule — June 2025</div>
+<div class="section-label fr">La nouvelle règle — Juin 2025</div>
+<h2 class="section-title en">The door that just opened</h2>
+<h2 class="section-title fr">La porte qui vient de s'ouvrir</h2>
+
+<div class="pull-quote en">Law 03-25, adopted in June 2025, is the most significant reform to Moroccan capital markets in a generation. Almost nobody is talking about what it means for retail investors.</div>
+<div class="pull-quote fr">La loi 03-25, adoptée en juin 2025, est la réforme la plus significative des marchés de capitaux marocains depuis une génération. Presque personne ne parle de ce qu'elle signifie pour les investisseurs particuliers.</div>
+
+<div class="fact-box">
+  <div class="fact-icon">🔓</div>
+  <div class="fact-content">
+    <div class="fact-label en">What changed</div>
+    <div class="fact-label fr">Ce qui a changé</div>
+    <div class="fact-text en">Moroccan investment funds can now hold up to <strong>10% of their assets in foreign securities</strong>. For the first time, you can get indirect exposure to international markets through a fully Moroccan, fully legal product. ETFs are now authorised on the Casablanca Stock Exchange. Sharia-compliant funds are now permitted. Umbrella and feeder fund structures are now legal.</div>
+    <div class="fact-text fr">Les fonds d'investissement marocains peuvent désormais détenir jusqu'à <strong>10% de leurs actifs en valeurs étrangères</strong>. Pour la première fois, il est possible d'obtenir une exposition indirecte aux marchés internationaux via un produit 100% marocain, 100% légal. Les ETF sont désormais autorisés à la Bourse de Casablanca. Les fonds conformes à la charia sont désormais permis. Les structures maître-nourricier sont désormais légales.</div>
+  </div>
+</div>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th class="en">What Law 03-25 introduced</th><th class="fr">Ce qu'introduit la loi 03-25</th>
+      <th class="en">Status (mid-2026)</th><th class="fr">Statut (mi-2026)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td class="en">ETFs on the Casablanca Stock Exchange</td><td class="fr">ETF sur la Bourse de Casablanca</td><td><span class="warn en">Authorised — operational launch pending</span><span class="warn fr">Autorisé — lancement opérationnel en attente</span></td></tr>
+    <tr><td class="en">Up to 10% foreign asset allocation in OPCVMs</td><td class="fr">Jusqu'à 10% d'actifs étrangers dans les OPCVM</td><td><span class="good en">Active — select funds already using it</span><span class="good fr">Actif — certains fonds l'utilisent déjà</span></td></tr>
+    <tr><td class="en">Sharia-compliant (participatif) funds</td><td class="fr">Fonds participatifs (charia)</td><td><span class="good en">Authorised</span><span class="good fr">Autorisé</span></td></tr>
+    <tr><td class="en">Currency-denominated OPCVMs for MREs</td><td class="fr">OPCVM en devises pour MRE</td><td><span class="warn en">Framework in place — products emerging</span><span class="warn fr">Cadre en place — produits en cours</span></td></tr>
+    <tr><td class="en">Futures market (hedging instruments)</td><td class="fr">Marché à terme (couverture)</td><td><span class="warn en">Institutional only — not retail yet</span><span class="warn fr">Institutionnel uniquement — pas encore retail</span></td></tr>
+  </tbody>
+</table>
+
+<!-- ═══════════════════════════════ ROUTE 2 ═══════════════════════════════ -->
+<div class="section-label en">Route 2 — Grey area</div>
+<div class="section-label fr">Voie 2 — Zone grise</div>
+<h2 class="section-title en">What people use — and why it is complicated</h2>
+<h2 class="section-title fr">Ce que les gens utilisent — et pourquoi c'est compliqué</h2>
+
+<p style="font-size:14px;color:var(--bark);line-height:1.8;margin-bottom:20px;" class="en">Several international CFD brokers explicitly accept Moroccan residents and Moroccan bank cards. They are regulated internationally. They are not licensed by the AMMC. Using your personal FX allowance to fund them is not what that allowance was designed for. This is the honest picture.</p>
+<p style="font-size:14px;color:var(--bark);line-height:1.8;margin-bottom:20px;" class="fr">Plusieurs brokers CFD internationaux acceptent explicitement les résidents marocains et les cartes bancaires marocaines. Ils sont régulés à l'international. Ils ne sont pas agréés par l'AMMC. Utiliser son allocation de change personnelle pour les alimenter ne correspond pas à l'usage prévu. Voici la réalité honnête.</p>
+
+<div class="route-header grey">
+  <span class="route-badge grey en">Grey Area — Use with eyes open</span>
+  <span class="route-badge grey fr">Zone grise — Agir en connaissance de cause</span>
+</div>
+<div class="route-body">
+  <div class="option-card">
+    <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--bark);margin-bottom:14px;" class="en">Brokers that accept Moroccan residents and cards</div>
+    <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--bark);margin-bottom:14px;" class="fr">Brokers acceptant résidents et cartes marocaines</div>
+    <div class="grey-card">
+      <div class="grey-top"><div class="grey-name">XTB, Exness, AvaTrade, XM, Pepperstone</div><span class="grey-status caution en">Caution</span><span class="grey-status caution fr">Prudence</span></div>
+      <div class="grey-desc en">Accept Moroccan residents. Moroccan bank cards accepted (Visa/Mastercard with international payments enabled). Products are CFDs — synthetic exposure to ETFs and indices, not direct ownership. Regulated internationally (CySEC, ASIC, FCA) but not by AMMC. Multiple Morocco-specific guides confirm they work. A Reddit thread from 2026 confirms XTB is fundable with a Moroccan card.</div>
+      <div class="grey-desc fr">Acceptent les résidents marocains. Cartes bancaires marocaines acceptées (Visa/Mastercard avec paiements internationaux activés). Les produits sont des CFD — exposition synthétique aux ETF et indices, pas de propriété directe. Régulés à l'international (CySEC, ASIC, FCA) mais pas par l'AMMC. Plusieurs guides spécifiques au Maroc le confirment. Un thread Reddit de 2026 confirme que XTB fonctionne avec une carte marocaine.</div>
+    </div>
+    <div class="grey-card">
+      <div class="grey-top"><div class="grey-name">IBKR, DEGIRO, Trade Republic</div><span class="grey-status risk en">Not available</span><span class="grey-status risk fr">Non disponible</span></div>
+      <div class="grey-desc en">DEGIRO and Trade Republic do not onboard Moroccan residents. IBKR accepts some Moroccan applicants case-by-case but is not marketed for Morocco and funding requires a convertible currency. These are not reliable routes from Morocco.</div>
+      <div class="grey-desc fr">DEGIRO et Trade Republic n'acceptent pas les résidents marocains. IBKR accepte certains candidats marocains au cas par cas mais n'est pas commercialisé pour le Maroc et le financement nécessite une devise convertible. Ces voies ne sont pas fiables depuis le Maroc.</div>
+    </div>
+
+    <div class="fact-box" style="margin-top:14px;background:var(--bark)">
+      <div class="fact-icon">⚖️</div>
+      <div class="fact-content">
+        <div class="fact-label en">The legal reality</div>
+        <div class="fact-label fr">La réalité juridique</div>
+        <div class="fact-text en">The IGOC (Morocco's foreign exchange rulebook) does not authorise residents to transfer MAD abroad for portfolio investment. Using your e-commerce or travel FX allowance to fund a broker is <strong>not what that allowance was designed for</strong>. It is widely practised. It is tolerated at small scale. It is not endorsed. The AMMC regularly warns about unlicensed platforms. At large volumes, it becomes a compliance risk.</div>
+        <div class="fact-text fr">L'IGOC (le règlement des changes marocain) n'autorise pas les résidents à transférer des MAD à l'étranger pour des investissements en portefeuille. Utiliser votre allocation de change e-commerce ou voyage pour alimenter un broker <strong>ne correspond pas à l'usage prévu</strong>. C'est très répandu. C'est toléré à petite échelle. Ce n'est pas approuvé. L'AMMC met régulièrement en garde contre les plateformes non agréées. À grande échelle, cela devient un risque de conformité.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ ROUTE 3 ═══════════════════════════════ -->
+<div class="section-label en">Route 3 — Outside the rules</div>
+<div class="section-label fr">Voie 3 — Hors des règles</div>
+<h2 class="section-title en">The shortcuts — and what they actually cost</h2>
+<h2 class="section-title fr">Les raccourcis — et ce qu'ils coûtent vraiment</h2>
+
+<div class="route-header risk">
+  <span class="route-badge risk en">High Risk — Regulatory exposure</span>
+  <span class="route-badge risk fr">Risque élevé — Exposition réglementaire</span>
+  <div class="route-title en">Route 3 — Three practices, all carry real risk</div>
+  <div class="route-title fr">Voie 3 — Trois pratiques, toutes à risque réel</div>
+</div>
+<div class="route-body">
+  <div class="option-card">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th class="en">Practice</th><th class="fr">Pratique</th>
+          <th class="en">What happens</th><th class="fr">Ce qui se passe</th>
+          <th class="en">Risk level</th><th class="fr">Niveau de risque</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="en">Direct foreign brokerage from MAD</td><td class="fr">Courtage étranger direct en MAD</td>
+          <td class="en">Wiring MAD abroad to fund a brokerage account directly. Not listed as authorised under IGOC.</td><td class="fr">Virement de MAD à l'étranger pour alimenter un compte de courtage. Non listé comme opération autorisée par l'IGOC.</td>
+          <td><span class="bad">High</span></td>
+        </tr>
+        <tr>
+          <td class="en">Crypto as a bridge</td><td class="fr">Crypto comme passerelle</td>
+          <td class="en">Buy USDT in Morocco via P2P, move offshore, invest in foreign markets. Officially disapproved. AML-flagged by BKAM and AMMC.</td><td class="fr">Acheter USDT au Maroc via P2P, transférer offshore, investir dans des marchés étrangers. Officiellement déconseillé. Signalé LCB-FT par BKAM et AMMC.</td>
+          <td><span class="bad">Very High</span></td>
+        </tr>
+        <tr>
+          <td class="en">Using an MRE relative's account</td><td class="fr">Compte d'un proche MRE</td>
+          <td class="en">MRE family member invests on your behalf using foreign income. Legally clean for the MRE. You do not own the assets in your name.</td><td class="fr">Un proche MRE investit pour vous avec des revenus étrangers. Légalement propre pour le MRE. Vous n'êtes pas propriétaire des actifs en votre nom.</td>
+          <td><span class="warn">Medium</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:12px;color:var(--bark);margin-top:12px;line-height:1.7;" class="en">Penalties for FX infractions in Morocco include fines expressed as multiples of the undeclared amount and potential criminal sanctions for serious or repeated violations. This post does not recommend any of these routes.</p>
+    <p style="font-size:12px;color:var(--bark);margin-top:12px;line-height:1.7;" class="fr">Les sanctions pour infractions aux changes au Maroc comprennent des amendes exprimées en multiples du montant non déclaré et des sanctions pénales potentielles pour les violations graves ou répétées. Ce guide ne recommande aucune de ces voies.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ MRE SECTION ═══════════════════════════════ -->
+<div class="section-label en">Specifically for MREs</div>
+<div class="section-label fr">Spécifiquement pour les MRE</div>
+<h2 class="section-title en">The rules that apply to you — and the one most people miss</h2>
+<h2 class="section-title fr">Les règles qui s'appliquent à vous — et celle que la plupart manquent</h2>
+
+<div class="rule-block">
+  <div class="rule-header"><div class="rule-icon">✅</div><div class="rule-title en">You can invest in Morocco from abroad</div><div class="rule-title fr">Vous pouvez investir au Maroc depuis l'étranger</div></div>
+  <div class="rule-body en">Open a <strong>compte en dirhams convertibles (CCDC)</strong> or <strong>compte en devises</strong> at any major Moroccan bank's MRE division. Wire EUR or GBP directly from abroad. From that account, you can subscribe to OPCVMs and open a securities account at the CSE. Attijariwafa, Banque Populaire (Chaabi Bank), BMCE/Bank of Africa all have European MRE networks.</div>
+  <div class="rule-body fr">Ouvrez un <strong>compte en dirhams convertibles (CCDC)</strong> ou un <strong>compte en devises</strong> dans la division MRE de toute grande banque marocaine. Effectuez un virement en EUR ou GBP directement depuis l'étranger. Depuis ce compte, vous pouvez souscrire des OPCVM et ouvrir un compte-titres à la Bourse de Casablanca. Attijariwafa, Banque Populaire (Chaabi Bank), BMCE/Bank of Africa ont tous des réseaux MRE européens.</div>
+</div>
+
+<div class="rule-block">
+  <div class="rule-header" style="background:#fff3e8;"><div class="rule-icon">⚠️</div><div class="rule-title en">The rule most people miss — repatriation</div><div class="rule-title fr">La règle que la plupart manquent — le rapatriement</div></div>
+  <div class="rule-body en">If you invest using <strong>foreign currency</strong> (wired from abroad into a CCDC or foreign currency account), you have a <strong>guaranteed right to repatriate</strong> your capital and gains at any time. If you invest using <strong>local MAD</strong> — even from a salary earned during a posting in Morocco — repatriation is <strong>not automatically guaranteed</strong> and may require Office des Changes authorisation. Fund from foreign currency from day one. Once you lose the currency trail, you lose the guarantee.</div>
+  <div class="rule-body fr">Si vous investissez en utilisant des <strong>devises étrangères</strong> (virées depuis l'étranger sur un CCDC ou compte en devises), vous disposez d'un <strong>droit garanti de rapatrier</strong> votre capital et vos gains à tout moment. Si vous investissez en utilisant des <strong>MAD locaux</strong> — même issus d'un salaire perçu lors d'une mission au Maroc — le rapatriement n'est <strong>pas automatiquement garanti</strong> et peut nécessiter une autorisation de l'Office des Changes. Alimentez en devises étrangères dès le premier jour. Une fois la trace devise perdue, vous perdez la garantie.</div>
+</div>
+
+<div class="rule-block">
+  <div class="rule-header"><div class="rule-icon">💰</div><div class="rule-title en">Your tax advantage as a non-resident</div><div class="rule-title fr">Votre avantage fiscal en tant que non-résident</div></div>
+  <div class="rule-body">
+    <table class="data-table" style="margin-top:0">
+      <thead><tr><th class="en">Investment type</th><th class="fr">Type d'investissement</th><th class="en">Tax for MRE</th><th class="fr">Fiscalité MRE</th><th class="en">Tax for resident</th><th class="fr">Fiscalité résident</th></tr></thead>
+      <tbody>
+        <tr><td class="en">CSE equity capital gains</td><td class="fr">Plus-values actions CSE</td><td><span class="good">0%</span></td><td style="display:none"><span class="good">0%</span></td><td>15%</td><td style="display:none">15%</td></tr>
+        <tr><td class="en">CSE dividends</td><td class="fr">Dividendes CSE</td><td>15% <span class="en">(withheld at source)</span><span class="fr">(retenu à la source)</span></td><td style="display:none">15%</td><td>15%</td><td style="display:none">15%</td></tr>
+        <tr><td class="en">OPCVM gains (&gt;12 months)</td><td class="fr">Plus-values OPCVM (&gt;12 mois)</td><td>15%</td><td style="display:none">15%</td><td>15%</td><td style="display:none">15%</td></tr>
+        <tr><td class="en">OPCVM gains (&lt;12 months)</td><td class="fr">Plus-values OPCVM (&lt;12 mois)</td><td>30%</td><td style="display:none">30%</td><td>30%</td><td style="display:none">30%</td></tr>
+        <tr><td class="en">DAT / savings interest</td><td class="fr">Intérêts DAT / épargne</td><td>20%</td><td style="display:none">20%</td><td>30%</td><td style="display:none">30%</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ WHERE TO START ═══════════════════════════════ -->
+<div class="section-label en">Where to start</div>
+<div class="section-label fr">Par où commencer</div>
+<h2 class="section-title en">If you have 1,000–3,000 MAD to invest</h2>
+<h2 class="section-title fr">Si vous avez 1 000–3 000 MAD à investir</h2>
+
+<div class="chart-wrap">
+  <div class="chart-title en">Your options ranked by accessibility</div>
+  <div class="chart-title fr">Vos options classées par accessibilité</div>
+  <div class="chart-sub en">Legal options only — for 1,000–3,000 MAD monthly</div>
+  <div class="chart-sub fr">Options légales uniquement — pour 1 000–3 000 MAD par mois</div>
+  <div class="bar-chart">
+    <div class="bar-row">
+      <div class="bar-label en">Money market OPCVM</div><div class="bar-label fr" style="display:none">OPCVM monétaire</div>
+      <div class="bar-track"><div class="bar-fill green" style="width:95%">Easiest</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label en">Bond OPCVM (MT/LT)</div><div class="bar-label fr" style="display:none">OPCVM obligataire</div>
+      <div class="bar-track"><div class="bar-fill primary" style="width:80%">Easy</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label en">CSE direct equity</div><div class="bar-label fr" style="display:none">Actions CSE directes</div>
+      <div class="bar-track"><div class="bar-fill accent" style="width:60%">Moderate</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label en">PER (if taxable)</div><div class="bar-label fr" style="display:none">PER (si imposable)</div>
+      <div class="bar-track"><div class="bar-fill light" style="width:50%">Moderate</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label en">Term deposit (DAT)</div><div class="bar-label fr" style="display:none">Dépôt à terme</div>
+      <div class="bar-track"><div class="bar-fill muted" style="width:35%">Needs lump sum</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="fact-box">
+  <div class="fact-icon">📍</div>
+  <div class="fact-content">
+    <div class="fact-label en">The honest starting point</div>
+    <div class="fact-label fr">Le point de départ honnête</div>
+    <div class="fact-text en">Step 1: Three months of essential expenses in a money market OPCVM via tamra.ma. From 500 MAD. Online. Daily liquidity. This is the emergency fund equivalent — not an investment, a foundation. Step 2: Once that exists, open a securities account and start a monthly DCA into MASI blue chips. Step 3: If you are employed and in a taxable bracket, PER contributions immediately improve your after-tax return. Any of these beats cash sitting still.</div>
+    <div class="fact-text fr">Étape 1 : Trois mois de dépenses essentielles dans un OPCVM monétaire via tamra.ma. À partir de 500 MAD. En ligne. Liquidité quotidienne. C'est l'équivalent du fonds d'urgence — pas un investissement, une fondation. Étape 2 : Une fois cela en place, ouvrir un compte-titres et commencer un DCA mensuel sur les blue chips du MASI. Étape 3 : Si vous êtes salarié et dans une tranche imposable, les versements PER améliorent immédiatement votre rendement après impôt. N'importe laquelle de ces options vaut mieux que l'argent qui dort.</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ CTA ═══════════════════════════════ -->
+<div class="cta-block">
+  <div class="cta-eyebrow en">Go deeper</div>
+  <div class="cta-eyebrow fr">Aller plus loin</div>
+  <div class="cta-title en">Want to talk through<br>any of these options?</div>
+  <div class="cta-title fr">Vous voulez approfondir<br>l'une de ces options ?</div>
+  <p class="cta-sub en">Drop MAROC in the comments on the Instagram post. If there is enough interest I will run a live Q&amp;A session next month — free, open to everyone, in both English and French.</p>
+  <p class="cta-sub fr">Écrivez MAROC en commentaire sur la publication Instagram. S'il y a suffisamment d'intérêt, j'organise une session live le mois prochain — gratuite, ouverte à tous, en français et en anglais.</p>
+  <a href="https://www.instagram.com/basmaunpacks" class="cta-btn en">Go to Instagram →</a>
+  <a href="https://www.instagram.com/basmaunpacks" class="cta-btn fr">Aller sur Instagram →</a>
+  <p class="cta-note en">@basmaunpacks · Not financial advice · Verify all information with a qualified adviser before acting · Data as of June 2026 · MASI 2025 full-year return: 27.57% (Bourse de Casablanca)</p>
+  <p class="cta-note fr">@basmaunpacks · Pas un conseil financier · Vérifiez toutes les informations avec un conseiller qualifié avant d'agir · Données de juin 2026 · Rendement MASI année 2025 : 27,57% (Bourse de Casablanca)</p>
+</div>
+
+<div class="disclaimer en">All figures sourced from Bank Al-Maghrib, AMMC, IMF, and primary market sources. Regulations and tax rules change — verify with a Moroccan financial institution or qualified adviser before making any financial decision. Past performance of the MASI and Moroccan investment funds does not predict future returns.</div>
+<div class="disclaimer fr">Toutes les données proviennent de Bank Al-Maghrib, AMMC, FMI et sources primaires de marché. La réglementation et la fiscalité évoluent — vérifiez auprès d'un établissement financier marocain ou d'un conseiller qualifié avant toute décision financière. Les performances passées du MASI et des fonds marocains ne préjugent pas des résultats futurs.</div>
+
+</div><!-- end page -->
+
+<script>
+function setLang(lang) {
+  document.body.className = lang === 'fr' ? 'lang-fr' : '';
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+
+  // Swap bar labels
+  document.querySelectorAll('.bar-label').forEach(el => {
+    if (lang === 'fr') {
+      el.style.display = el.classList.contains('fr') ? 'block' : 'none';
+    } else {
+      el.style.display = el.classList.contains('fr') ? 'none' : 'block';
+    }
+  });
+
+  // Swap table cells
+  document.querySelectorAll('td, th').forEach(el => {
+    if (lang === 'fr') {
+      if (el.classList.contains('en')) el.style.display = 'none';
+      if (el.classList.contains('fr')) el.style.display = 'table-cell';
+    } else {
+      if (el.classList.contains('fr')) el.style.display = 'none';
+      if (el.classList.contains('en')) el.style.display = 'table-cell';
+    }
+  });
+}
+
+// Animate bars on load
+window.addEventListener('load', () => {
+  const bars = document.querySelectorAll('.bar-fill');
+  bars.forEach(bar => {
+    const w = bar.style.width;
+    bar.style.width = '0';
+    setTimeout(() => { bar.style.width = w; }, 300);
+  });
+});
+</script>
+</body>
+</html>
